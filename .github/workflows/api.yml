@@ -1,0 +1,9 @@
+name: API Test
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use API Key
+        run: echo "Key = ${{ secrets.API_KEY }}"
