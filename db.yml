@@ -1,0 +1,13 @@
+name: DB Connect
+on: push
+
+jobs:
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to DB
+        env:
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        run: |
+          echo "Connecting to database"
+          mysql -u root -p$DB_PASSWORD -e "SHOW DATABASES;"
